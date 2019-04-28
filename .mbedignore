@@ -1,0 +1,6 @@
+mbed-os/features/cellular/framework/targets/GEMALTO/*
+mbed-os/features/cellular/framework/targets/GENERIC/*
+mbed-os/features/cellular/framework/targets/MultiTech/*
+mbed-os/features/cellular/framework/targets/QUECTEL/*
+mbed-os/features/cellular/framework/targets/TELIT/*
+mbed-os/features/cellular/framework/targets/UBLOX/*
