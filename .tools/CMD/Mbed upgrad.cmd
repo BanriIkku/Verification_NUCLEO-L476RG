@@ -1,5 +1,5 @@
 @echo off
-cd ../mbed-os
+cd ../../mbed-os
 python -m pip install --upgrade pip
 mbed sync
 mbed update latest --clean
@@ -8,3 +8,4 @@ echo *********************************************
 mbed ls
 echo *********************************************
 pause
+cd .tools\CMD
