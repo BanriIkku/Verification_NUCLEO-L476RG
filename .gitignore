@@ -1,4 +1,6 @@
 *.py*
 mbed-os
 BUILD
+.document
 .vscode
+.doxygen
