@@ -1,3 +1,4 @@
 *.py*
 mbed-os
 BUILD
+.vscode
