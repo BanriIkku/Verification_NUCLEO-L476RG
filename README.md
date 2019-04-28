@@ -1,0 +1,2 @@
+# Verification_NUCLEO-L476RG
+NUCLEO-L476RGを使って何ができるか確認するためのrepositoryです。
