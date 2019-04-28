@@ -18,57 +18,57 @@ DigitalIn EPD_Device_busy(MBED_CONF_E_INK_BUSY);
 
 void EPD_Device::spi_initialize(void)
 {
-	EPD_Device_spi.format(MBED_CONF_E_INK_BITS, EPD_DEVICE_SPIMODE);
-	EPD_Device_spi.frequency(MBED_CONF_E_INK_FREQUENCY);
+    EPD_Device_spi.format(MBED_CONF_E_INK_BITS, EPD_DEVICE_SPIMODE);
+    EPD_Device_spi.frequency(MBED_CONF_E_INK_FREQUENCY);
 }
 void EPD_Device::spi_write(int data)
 {
-	EPD_Device_spi.write(data);
+    EPD_Device_spi.write(data);
 }
 int EPD_Device::spi_read(void)
 {
-	return EPD_Device_spi.write(0x00);
+    return EPD_Device_spi.write(0x00);
 }
 /**
  * @brief
  */
 void EPD_Device::toggle_cs(bool toggle)
 {
-	EPD_Device_cs.write(toggle ? 1 : 0);
+    EPD_Device_cs.write(toggle ? 1 : 0);
 }
 /**
  * @brief
  */
 void EPD_Device::toggle_dc(bool toggle)
 {
-	EPD_Device_dc.write(toggle ? 1 : 0);
+    EPD_Device_dc.write(toggle ? 1 : 0);
 }
 /**
  * @brief
  */
 void EPD_Device::toggle_reset(bool toggle)
 {
-	EPD_Device_reset.write(toggle ? 1 : 0);
+    EPD_Device_reset.write(toggle ? 1 : 0);
 }
 /**
  * @brief
  */
 bool EPD_Device::check_busy(bool toggle)
 {
-	bool retValue = true;
-	Timer ts;
-	ts.start();
-	ts.reset();
-	while ((toggle ? 1 : 0) == EPD_Device_busy.read()) {
-		if (EPD_DEVICE_BUSY_TIMEOUT < ts.read_ms()) {
-			retValue = false;
-			break;
-		}
-		wait_ms(EPD_DEVICE_BUSY_WAITTIME);
-	}
-	ts.stop();
+    bool retValue = true;
+    Timer ts;
+    ts.start();
+    ts.reset();
+    while ((toggle ? 1 : 0) == EPD_Device_busy.read()) {
+        if (EPD_DEVICE_BUSY_TIMEOUT < ts.read_ms()) {
+            retValue = false;
+            break;
+        }
+        wait_ms(EPD_DEVICE_BUSY_WAITTIME);
+    }
+    ts.stop();
 
-	return retValue;
+    return retValue;
 }
 
 
@@ -80,16 +80,16 @@ EPD_Device *EPD_Device::s_pInstance = NULL;
 // Create()
 void EPD_Device::Create()
 {
-	if (!s_pInstance) {
-		s_pInstance = new EPD_Device;
-	}
+    if (!s_pInstance) {
+        s_pInstance = new EPD_Device;
+    }
 }
 
 // Destroy()
 void EPD_Device::Destroy()
 {
-	delete s_pInstance;
-	s_pInstance = NULL;
+    delete s_pInstance;
+    s_pInstance = NULL;
 }
 
 /* ==================================== */
