@@ -1,0 +1,31 @@
+{
+	"folders": [{
+		"path": "."
+	}],
+	"settings": {
+		"project.name": "Verification_NUCLEO-L476RG",
+		"project.targetdevice": "NUCLEO",
+		"project.bin": "BUILD/NUCLEO_L476RG/GCC_ARM-RELEASE",
+		"project.build.profile.debug": "debug",
+		"project.build.profile.release": "release",
+		"project.build.Lv_Verbose": "0",
+		"project.build.compile_option": "",
+		"OpenOCDFolder": "C:\\Program Files (x86)\\OpenOCD",
+		"pyOCDFolder": "%LOCALAPPDATA%\\Programs\\Python\\Python37\\Scripts",
+		"JLinkFolder": "C:\\Program Files (x86)\\SEGGER\\JLink_V640",
+		"files.associations": {
+			"system_error": "cpp",
+			"type_traits": "cpp",
+			"typeinfo": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"unordered_map": "cpp",
+			"vector": "cpp",
+			"initializer_list": "cpp",
+			"*.tcc": "cpp"
+		},
+		"git.ignoreLimitWarning": true,
+		"uncrustify.executablePath": ".tool/uncrustify/uncrustify.exe",
+		"uncrustify.executablePath": ".tool/uncrustify/cfg/_cpp.cfg"
+	}
+}

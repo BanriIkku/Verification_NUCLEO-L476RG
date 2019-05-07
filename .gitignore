@@ -1,6 +1,6 @@
 *.py*
+__pycache__
 mbed-os
 BUILD
 .document
-.vscode
 .doxygen
