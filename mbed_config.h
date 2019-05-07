@@ -47,11 +47,18 @@
 #define MBED_CONF_EVENTS_SHARED_HIGHPRIO_STACKSIZE                            1024                                                                                             // set by library:events
 #define MBED_CONF_EVENTS_SHARED_STACKSIZE                                     2048                                                                                             // set by library:events
 #define MBED_CONF_EVENTS_USE_LOWPOWER_TIMER_TICKER                            0                                                                                                // set by library:events
+#define MBED_CONF_E_INK_BITS                                                  8                                                                                                // set by library:E-INK
+#define MBED_CONF_E_INK_BUSY                                                  PA_8                                                                                             // set by library:E-INK
+#define MBED_CONF_E_INK_CS                                                    PB_6                                                                                             // set by library:E-INK
+#define MBED_CONF_E_INK_DC                                                    PC_7                                                                                             // set by library:E-INK
+#define MBED_CONF_E_INK_FREQUENCY                                             1000000                                                                                          // set by library:E-INK
+#define MBED_CONF_E_INK_MISO                                                  PA_6                                                                                             // set by library:E-INK
+#define MBED_CONF_E_INK_MODE_PHASE                                            0                                                                                                // set by library:E-INK
+#define MBED_CONF_E_INK_MODE_POLARITY                                         0                                                                                                // set by library:E-INK
+#define MBED_CONF_E_INK_MOSI                                                  PA_7                                                                                             // set by library:E-INK
+#define MBED_CONF_E_INK_RST                                                   PA_9                                                                                             // set by library:E-INK
+#define MBED_CONF_E_INK_SCLK                                                  PA_5                                                                                             // set by library:E-INK
 #define MBED_CONF_FILESYSTEM_PRESENT                                          1                                                                                                // set by library:filesystem
-#define MBED_CONF_GEMALTO_CINTERION_BAUDRATE                                  115200                                                                                           // set by library:GEMALTO_CINTERION
-#define MBED_CONF_GEMALTO_CINTERION_PROVIDE_DEFAULT                           0                                                                                                // set by library:GEMALTO_CINTERION
-#define MBED_CONF_GENERIC_AT3GPP_BAUDRATE                                     115200                                                                                           // set by library:GENERIC_AT3GPP
-#define MBED_CONF_GENERIC_AT3GPP_PROVIDE_DEFAULT                              0                                                                                                // set by library:GENERIC_AT3GPP
 #define MBED_CONF_LORA_ADR_ON                                                 1                                                                                                // set by library:lora
 #define MBED_CONF_LORA_APPLICATION_EUI                                        {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}                                                 // set by library:lora
 #define MBED_CONF_LORA_APPLICATION_KEY                                        {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} // set by library:lora
@@ -125,7 +132,7 @@
 #define MBED_CONF_MBED_MESH_API_WISUN_BC_DWELL_INTERVAL                       0                                                                                                // set by library:mbed-mesh-api
 #define MBED_CONF_MBED_MESH_API_WISUN_BC_FIXED_CHANNEL                        0xffff                                                                                           // set by library:mbed-mesh-api
 #define MBED_CONF_MBED_MESH_API_WISUN_BC_INTERVAL                             0                                                                                                // set by library:mbed-mesh-api
-#define MBED_CONF_MBED_MESH_API_WISUN_NETWORK_NAME                            "NETWORK_NAME"                                                                                   // set by library:mbed-mesh-api
+#define MBED_CONF_MBED_MESH_API_WISUN_NETWORK_NAME                            "Wi-SUN Network"                                                                                 // set by library:mbed-mesh-api
 #define MBED_CONF_MBED_MESH_API_WISUN_OPERATING_CLASS                         255                                                                                              // set by library:mbed-mesh-api
 #define MBED_CONF_MBED_MESH_API_WISUN_OPERATING_MODE                          255                                                                                              // set by library:mbed-mesh-api
 #define MBED_CONF_MBED_MESH_API_WISUN_REGULATORY_DOMAIN                       3                                                                                                // set by library:mbed-mesh-api
@@ -151,7 +158,7 @@
 #define MBED_CONF_NSAPI_SOCKET_STATS_MAX_COUNT                                10                                                                                               // set by library:nsapi
 #define MBED_CONF_PLATFORM_CRASH_CAPTURE_ENABLED                              1                                                                                                // set by library:platform[NUCLEO_L476RG]
 #define MBED_CONF_PLATFORM_CTHUNK_COUNT_MAX                                   8                                                                                                // set by library:platform
-#define MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE                           9600                                                                                             // set by library:platform
+#define MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE                           115200                                                                                           // set by application[*]
 #define MBED_CONF_PLATFORM_ERROR_ALL_THREADS_INFO                             0                                                                                                // set by library:platform
 #define MBED_CONF_PLATFORM_ERROR_FILENAME_CAPTURE_ENABLED                     0                                                                                                // set by library:platform
 #define MBED_CONF_PLATFORM_ERROR_HIST_ENABLED                                 0                                                                                                // set by library:platform
@@ -161,8 +168,8 @@
 #define MBED_CONF_PLATFORM_FORCE_NON_COPYABLE_ERROR                           0                                                                                                // set by library:platform
 #define MBED_CONF_PLATFORM_MAX_ERROR_FILENAME_LEN                             16                                                                                               // set by library:platform
 #define MBED_CONF_PLATFORM_POLL_USE_LOWPOWER_TIMER                            0                                                                                                // set by library:platform
-#define MBED_CONF_PLATFORM_STDIO_BAUD_RATE                                    9600                                                                                             // set by library:platform
-#define MBED_CONF_PLATFORM_STDIO_BUFFERED_SERIAL                              0                                                                                                // set by library:platform
+#define MBED_CONF_PLATFORM_STDIO_BAUD_RATE                                    115200                                                                                           // set by application[*]
+#define MBED_CONF_PLATFORM_STDIO_BUFFERED_SERIAL                              1                                                                                                // set by application[*]
 #define MBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES                             0                                                                                                // set by library:platform
 #define MBED_CONF_PLATFORM_STDIO_CONVERT_TTY_NEWLINES                         0                                                                                                // set by library:platform
 #define MBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT                                1                                                                                                // set by library:platform
@@ -171,23 +178,14 @@
 #define MBED_CONF_PPP_CELL_IFACE_AT_PARSER_BUFFER_SIZE                        256                                                                                              // set by library:ppp-cell-iface
 #define MBED_CONF_PPP_CELL_IFACE_AT_PARSER_TIMEOUT                            8000                                                                                             // set by library:ppp-cell-iface
 #define MBED_CONF_PPP_CELL_IFACE_BAUD_RATE                                    115200                                                                                           // set by library:ppp-cell-iface
-#define MBED_CONF_QUECTEL_BC95_BAUDRATE                                       9600                                                                                             // set by library:QUECTEL_BC95
-#define MBED_CONF_QUECTEL_BC95_PROVIDE_DEFAULT                                0                                                                                                // set by library:QUECTEL_BC95
-#define MBED_CONF_QUECTEL_BG96_BAUDRATE                                       115200                                                                                           // set by library:QUECTEL_BG96
-#define MBED_CONF_QUECTEL_BG96_PROVIDE_DEFAULT                                0                                                                                                // set by library:QUECTEL_BG96
-#define MBED_CONF_QUECTEL_M26_BAUDRATE                                        115200                                                                                           // set by library:QUECTEL_M26
-#define MBED_CONF_QUECTEL_M26_PROVIDE_DEFAULT                                 0                                                                                                // set by library:QUECTEL_M26
-#define MBED_CONF_QUECTEL_UG96_BAUDRATE                                       115200                                                                                           // set by library:QUECTEL_UG96
-#define MBED_CONF_QUECTEL_UG96_PROVIDE_DEFAULT                                0                                                                                                // set by library:QUECTEL_UG96
 #define MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE                                 512                                                                                              // set by library:rtos
+#define MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE_DEBUG_EXTRA                     128                                                                                              // set by library:rtos[STM]
 #define MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE_TICKLESS_EXTRA                  256                                                                                              // set by library:rtos
 #define MBED_CONF_RTOS_MAIN_THREAD_STACK_SIZE                                 4096                                                                                             // set by library:rtos
 #define MBED_CONF_RTOS_PRESENT                                                1                                                                                                // set by library:rtos
 #define MBED_CONF_RTOS_THREAD_STACK_SIZE                                      4096                                                                                             // set by library:rtos
 #define MBED_CONF_RTOS_TIMER_THREAD_STACK_SIZE                                768                                                                                              // set by library:rtos
 #define MBED_CONF_S2LP_PROVIDE_DEFAULT                                        0                                                                                                // set by library:s2lp
-#define MBED_CONF_SARA4_PPP_BAUDRATE                                          115200                                                                                           // set by library:SARA4_PPP
-#define MBED_CONF_SARA4_PPP_PROVIDE_DEFAULT                                   0                                                                                                // set by library:SARA4_PPP
 #define MBED_CONF_STORAGE_DEFAULT_KV                                          kv                                                                                               // set by library:storage
 #define MBED_CONF_STORAGE_FILESYSTEM_BLOCKDEVICE                              default                                                                                          // set by library:storage_filesystem
 #define MBED_CONF_STORAGE_FILESYSTEM_EXTERNAL_BASE_ADDRESS                    0                                                                                                // set by library:storage_filesystem
@@ -222,12 +220,6 @@
 #define MBED_CONF_TARGET_LSE_AVAILABLE                                        1                                                                                                // set by target:FAMILY_STM32
 #define MBED_CONF_TARGET_MPU_ROM_END                                          0x0fffffff                                                                                       // set by target:Target
 #define MBED_CONF_TARGET_TICKLESS_FROM_US_TICKER                              1                                                                                                // set by target:FAMILY_STM32
-#define MBED_CONF_TELIT_HE910_BAUDRATE                                        115200                                                                                           // set by library:TELIT_HE910
-#define MBED_CONF_TELIT_HE910_PROVIDE_DEFAULT                                 0                                                                                                // set by library:TELIT_HE910
-#define MBED_CONF_UBLOX_AT_BAUDRATE                                           115200                                                                                           // set by library:UBLOX_AT
-#define MBED_CONF_UBLOX_AT_PROVIDE_DEFAULT                                    0                                                                                                // set by library:UBLOX_AT
-#define MBED_CONF_UBLOX_PPP_BAUDRATE                                          115200                                                                                           // set by library:UBLOX_PPP
-#define MBED_CONF_UBLOX_PPP_PROVIDE_DEFAULT                                   0                                                                                                // set by library:UBLOX_PPP
 #define MBED_CPU_STATS_ENABLED                                                1                                                                                                // set by application[*]
 #define MBED_HEAP_STATS_ENABLED                                               1                                                                                                // set by application[*]
 #define MBED_LFS_BLOCK_SIZE                                                   512                                                                                              // set by library:littlefs

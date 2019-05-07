@@ -1,0 +1,119 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "echoCommand": true,
+    "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": [
+            "relative",
+            "${workspaceRoot}"
+        ],
+        "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+        }
+    },
+    "tasks": [
+        {
+            "label": "[debug] build all",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "$env:PROJECTNAME=\\\"${config:project.name}\\\";",
+                "$env:TargetDeviceName=\\\"${config:project.targetdevice}\\\";",
+                "$env:PROFILE=\\\"${config:project.build.profile.debug}\\\";",
+                "${config:project.env.ADD_MBED-OS-EXTEND}=\\\"${config:project.build.ADD_MBED-OS-EXTEND}\\\";",
+                "$env:RUN_AStyle=\\\"${config:project.build.RUN_AStyle}\\\";",
+                "$env:RUN_Rebuild=\\\"n\\\";",
+                "$env:RUN_RebuildAll=\\\"n\\\";",
+                "$env:Set_Library=\\\"${config:project.build.Set_Library}\\\";",
+                "$env:Use_cloud_client=\\\"${config:project.build.Use_cloud_client}\\\";",
+                "$env:Use_extLibrary=\\\"${config:project.build.Use_extLibrary}\\\";",
+                "$env:Lv_Verbose=\\\"${config:project.build.Lv_Verbose}\\\";",
+                "powershell",
+                "./.tools/CMD/Compile_VSCODE.cmd ${config:project.build.compile_option} -j 4;"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "[debug] REBUILD all",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "$env:PROJECTNAME=\\\"${config:project.name}\\\";",
+                "$env:TargetDeviceName=\\\"${config:project.targetdevice}\\\";",
+                "$env:PROFILE=\\\"debug\\\";",
+                "${config:project.env.ADD_MBED-OS-EXTEND}=\\\"${config:project.build.ADD_MBED-OS-EXTEND}\\\";",
+                "$env:RUN_AStyle=\\\"${config:project.build.RUN_AStyle}\\\";",
+                "$env:RUN_Rebuild=\\\"y\\\";",
+                "$env:RUN_RebuildAll=\\\"y\\\";",
+                "$env:Set_Library=\\\"${config:project.build.Set_Library}\\\";",
+                "$env:Use_cloud_client=\\\"${config:project.build.Use_cloud_client}\\\";",
+                "$env:Use_extLibrary=\\\"${config:project.build.Use_extLibrary}\\\";",
+                "$env:Lv_Verbose=\\\"${config:project.build.Lv_Verbose}\\\";",
+                "powershell",
+                "./.tools/CMD/Compile_VSCODE.cmd ${config:project.build.compile_option} -j 4;"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "<release> build all",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "$env:PROJECTNAME=\\\"${config:project.name}\\\";",
+                "$env:TargetDeviceName=\\\"${config:project.targetdevice}\\\";",
+                "$env:PROFILE=\\\"${config:project.build.profile.release}\\\";",
+                "${config:project.env.ADD_MBED-OS-EXTEND}=\\\"${config:project.build.ADD_MBED-OS-EXTEND}\\\";",
+                "$env:RUN_AStyle=\\\"y\\\";",
+                "$env:RUN_Rebuild=\\\"n\\\";",
+                "$env:RUN_RebuildAll=\\\"n\\\";",
+                "$env:Set_Library=\\\"n\\\";",
+                "$env:Use_cloud_client=\\\"${config:project.build.Use_cloud_client}\\\";",
+                "$env:Use_extLibrary=\\\"${config:project.build.Use_extLibrary}\\\";",
+                "$env:Lv_Verbose=\\\"${config:project.build.Lv_Verbose}\\\";",
+                "powershell",
+                "./.tools/CMD/Compile_VSCODE.cmd ${config:project.build.compile_option} -j 4;"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "<release> REBUILD all",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "$env:PROJECTNAME=\\\"${config:project.name}\\\";",
+                "$env:TargetDeviceName=\\\"${config:project.targetdevice}\\\";",
+                "$env:PROFILE=\\\"release\\\";",
+                "${config:project.env.ADD_MBED-OS-EXTEND}=\\\"${config:project.build.ADD_MBED-OS-EXTEND}\\\";",
+                "$env:RUN_AStyle=\\\"y\\\";",
+                "$env:RUN_Rebuild=\\\"y\\\";",
+                "$env:RUN_RebuildAll=\\\"y\\\";",
+                "$env:Set_Library=\\\"n\\\";",
+                "$env:Use_cloud_client=\\\"${config:project.build.Use_cloud_client}\\\";",
+                "$env:Use_extLibrary=\\\"${config:project.build.Use_extLibrary}\\\";",
+                "$env:Lv_Verbose=\\\"${config:project.build.Lv_Verbose}\\\";",
+                "powershell",
+                "./.tools/CMD/Compile_VSCODE.cmd ${config:project.build.compile_option} ;"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
