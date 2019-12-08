@@ -1,0 +1,9 @@
+{
+    "name": "myplatform",
+    "config": {
+        "interval_millisecond": {
+            "help": "",
+            "value": 100
+        }
+    }
+}

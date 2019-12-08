@@ -64,7 +64,7 @@ bool EPD_Device::check_busy(bool toggle)
             retValue = false;
             break;
         }
-        wait_ms(EPD_DEVICE_BUSY_WAITTIME);
+        ThisThread :: sleep_for(EPD_DEVICE_BUSY_WAITTIME);
     }
     ts.stop();
 

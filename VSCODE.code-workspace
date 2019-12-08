@@ -1,8 +1,11 @@
 {
-	"folders": [{
-		"path": "."
-	}],
+	"folders": [
+		{
+			"path": "."
+		}
+	],
 	"settings": {
+		"editor.renderWhitespace": "all",
 		"project.name": "Verification_NUCLEO-L476RG",
 		"project.targetdevice": "NUCLEO",
 		"project.bin": "BUILD/NUCLEO_L476RG/GCC_ARM-RELEASE",
@@ -10,6 +13,7 @@
 		"project.build.profile.release": "release",
 		"project.build.Lv_Verbose": "0",
 		"project.build.compile_option": "",
+		"project.build.RUN_AStyle": "n",
 		"OpenOCDFolder": "C:\\Program Files (x86)\\OpenOCD",
 		"pyOCDFolder": "%LOCALAPPDATA%\\Programs\\Python\\Python37\\Scripts",
 		"JLinkFolder": "C:\\Program Files (x86)\\SEGGER\\JLink_V640",
@@ -25,7 +29,20 @@
 			"*.tcc": "cpp"
 		},
 		"git.ignoreLimitWarning": true,
-		"uncrustify.executablePath": ".tool/uncrustify/uncrustify.exe",
-		"uncrustify.executablePath": ".tool/uncrustify/cfg/_cpp.cfg"
+		"uncrustify.configPath.windows": ".tools/uncrustify/cfg/_cpp.cfg",
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/*.py": true,
+			"**/*.pyc": true,
+			"BUILD": true,
+			"doxyfile": true,
+			"LICENSE": true,
+			"mbed-os": true,
+			"**/*.md": false
+		}
 	}
 }

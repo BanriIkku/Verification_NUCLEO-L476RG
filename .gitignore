@@ -4,3 +4,5 @@ mbed-os
 BUILD
 .document
 .doxygen
+*.html
+*.htm

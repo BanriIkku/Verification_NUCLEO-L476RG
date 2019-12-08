@@ -8,8 +8,8 @@
             "platform.sys-stats-enabled"      : true,
 
 
-            "platform.default-serial-baud-rate" : 115200,
-            "platform.stdio-baud-rate"          : 115200,
+            "platform.default-serial-baud-rate" : 921600,
+            "platform.stdio-baud-rate"          : 921600,
             "platform.stdio-buffered-serial"    : true
         }
     }
