@@ -34,7 +34,7 @@ int EPD_Device::spi_read(void)
  */
 void EPD_Device::toggle_cs(bool toggle)
 {
-    EPD_Device_cs.write(toggle ? 1 : 0);
+    EPD_Device_cs.write(toggle ? 0 : 1);
 }
 /**
  * @brief
@@ -48,7 +48,7 @@ void EPD_Device::toggle_dc(bool toggle)
  */
 void EPD_Device::toggle_reset(bool toggle)
 {
-    EPD_Device_reset.write(toggle ? 1 : 0);
+    EPD_Device_reset.write(toggle ? 0 : 1);
 }
 /**
  * @brief
@@ -71,9 +71,14 @@ bool EPD_Device::check_busy(bool toggle)
     return retValue;
 }
 
+bool EPD_Device::busy() {
+    return (1 == EPD_Device_busy.read()) ? true : false;
+}
 
 
 
+
+#if 0
 // 唯一のインスタンスをNULLで初期化
 EPD_Device *EPD_Device::s_pInstance = NULL;
 
@@ -91,6 +96,7 @@ void EPD_Device::Destroy()
     delete s_pInstance;
     s_pInstance = NULL;
 }
+#endif
 
 /* ==================================== */
 } // namespace E_INK

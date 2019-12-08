@@ -152,7 +152,7 @@ void EPD_Device::CMD_07(void)
 /**
  * @brief
  */
-void EPD_Device::CMD_10(int *value, int length)
+void EPD_Device::CMD_10(char *value, int length)
 {
 // Data start transmission 1
 // SPI (0x10)
@@ -213,7 +213,7 @@ void EPD_Device::CMD_12(void)
 /**
  * @brief
  */
-void EPD_Device::CMD_13(int *value, int length)
+void EPD_Device::CMD_13(char *value, int length)
 {
 // Data start transmission 2
 // SPI (0x13)

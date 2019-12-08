@@ -8,20 +8,19 @@ namespace E_INK {
 /* ==================================== */
 class EPD_Device {
 public:
-    static EPD_Device *GetInstance()
-    {
-        return s_pInstance;
-    }
 
-    static void Create();
-    static void Destroy();
+    bool Create();
+    bool Destroy();
+    bool Refresh(char *bw_value, int bw_length,char *red_value, int red_length);
+
+    bool Continued();
+    bool busy();
+
+    // EPD_Device();     // 隠しコンストラクタ
 
 protected:
-    static EPD_Device *s_pInstance;
-    EPD_Device();     // 隠しコンストラクタ
-
 private:
-////////////////////////////////
+    ////////////////////////////////
     void spi_initialize(void);
     void spi_write(int data);
     int spi_read(void);
@@ -31,7 +30,7 @@ private:
     void toggle_reset(bool toggle);
     bool check_busy(bool toggle);
 
-////////////////////////////////
+    ////////////////////////////////
     void CMD_00(void);
     void CMD_01(void);
     void CMD_02(void);
@@ -40,10 +39,10 @@ private:
     void CMD_05(void);
     void CMD_06(void);
     void CMD_07(void);
-    void CMD_10(int *value, int length);
+    void CMD_10(char *value, int length);
     bool CMD_11(void);
     void CMD_12(void);
-    void CMD_13(int *value, int length);
+    void CMD_13(char *value, int length);
     void CMD_20(void);
     void CMD_21(void);
     void CMD_22(void);
@@ -71,7 +70,7 @@ private:
     void CMD_A2(int *value, int length);
     void CMD_E3(void);
 
-////////////////////////////////
+    ////////////////////////////////
 };
 
 /* ==================================== */
