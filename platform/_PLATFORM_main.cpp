@@ -159,6 +159,7 @@ int _PLATFORM_main(void)
     {
         if(1<= lpt.read())
         {
+            usr_led=!usr_led;
             lpt.reset();
         }
         _PLATFORM_Repetition();
