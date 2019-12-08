@@ -1,10 +1,50 @@
 
 #include "_PLATFORM_main.h"
-#include "_PLATFORM_Logger.h"
 #include "mbed_trace.h"
 
 #define TRACE_GROUP   "plat"
 
+Mutex forPC_mutex;
+
+UARTSerial forPC_serial(STDIO_UART_TX, STDIO_UART_RX,MBED_CONF_PLATFORM_STDIO_BAUD_RATE);
+
+
+/* ///////////////////////////////////////////////////// */
+/*! @brief 要約説明.
+ *         要約説明の続き.
+ *
+ *  詳細説明がここから始まる.
+ */
+/* ///////////////////////////////////////////////////// */
+static void  _Logger_Output(const char* value)
+{
+    int len=strlen(value);
+    forPC_serial.write(value, len);
+}
+
+/* ///////////////////////////////////////////////////// */
+/*! @brief 要約説明.
+ *         要約説明の続き.
+ *
+ *  詳細説明がここから始まる.
+ */
+/* ///////////////////////////////////////////////////// */
+static void  _Logger_mutex_wait_function(void)
+{
+    forPC_mutex.lock();
+}
+
+/* ///////////////////////////////////////////////////// */
+/*! @brief 要約説明.
+ *         要約説明の続き.
+ *
+ *  詳細説明がここから始まる.
+ */
+/* ///////////////////////////////////////////////////// */
+static void  _Logger_mutex_release_function(void)
+{
+    forPC_mutex.unlock();
+}
 
 /* ///////////////////////////////////////////////////// */
 /*! @brief 要約説明.
@@ -103,12 +143,10 @@ void _func_continued() {
 int _PLATFORM_main(void)
 {
 
-    mbed_trace_print_function_set(_Logger_output);
+    mbed_trace_init();
+    mbed_trace_print_function_set(_Logger_Output);
     mbed_trace_mutex_wait_function_set(_Logger_mutex_wait_function);
     mbed_trace_mutex_release_function_set(_Logger_mutex_release_function);
-
-
-    mbed_trace_init();
 
     int ret_value=0;
     usr_led=1;
