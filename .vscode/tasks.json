@@ -98,6 +98,16 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "copy",
+            "type": "shell",
+            "command": "copy ${workspaceRoot}//BUILD//NUCLEO_L476RG//GCC_ARM-RELEASE//Verification_NUCLEO-L476RG.bin f:"
+        },
+        {
+            "label": "AStyle",
+            "type": "shell",
+            "command": "${workspaceRoot}//.tools//CMD//AStyle.cmd"
         }
     ]
 }
