@@ -1,16 +1,16 @@
 {
     "target_overrides": {
         "*": {
-            "platform.stack-stats-enabled"    : true,
-            "platform.heap-stats-enabled"     : true,
-            "platform.cpu-stats-enabled"      : true,
-            "platform.thread-stats-enabled"   : true,
-            "platform.sys-stats-enabled"      : true,
-
-
-            "platform.default-serial-baud-rate" : 921600,
-            "platform.stdio-baud-rate"          : 921600,
-            "platform.stdio-buffered-serial"    : true
+            "platform.stack-stats-enabled": true,
+            "platform.heap-stats-enabled": true,
+            "platform.cpu-stats-enabled": true,
+            "platform.thread-stats-enabled": true,
+            "platform.sys-stats-enabled": true,
+            "platform.default-serial-baud-rate": 921600,
+            "platform.stdio-baud-rate": 921600,
+            "platform.stdio-buffered-serial": true,
+            "mbed-trace.enable": true,
+            "mbed-trace.max-level": "TRACE_LEVEL_DEBUG"
         }
     }
 }

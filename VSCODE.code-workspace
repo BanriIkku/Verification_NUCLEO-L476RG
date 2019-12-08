@@ -14,8 +14,8 @@
 		"project.build.Lv_Verbose": "0",
 		"project.build.compile_option": "",
 		"project.build.RUN_AStyle": "n",
-		"OpenOCDFolder": "C:\\Program Files (x86)\\OpenOCD",
-		"pyOCDFolder": "%LOCALAPPDATA%\\Programs\\Python\\Python37\\Scripts",
+		"OpenOCDFolder": "C:\\Program Files (x86)\\openOCD\\bin",
+		"pyOCDFolder": "C:\\Program Files (x86)\\Python38-32\\Scripts",
 		"JLinkFolder": "C:\\Program Files (x86)\\SEGGER\\JLink_V640",
 		"files.associations": {
 			"system_error": "cpp",

@@ -5,7 +5,7 @@
             "name": "C++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/BUILD/${config:project.name}.elf",
+            "program": "${workspaceRoot}/${config:project.bin}/${config:project.name}.elf",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceRoot}",
@@ -45,7 +45,7 @@
             "windows": {
                 "MIMode": "gdb",
                 "MIDebuggerPath": "arm-none-eabi-gdb.exe",
-                "debugServerPath": "${config:OpenOCDFolder}\\bin\\openocd.exe",
+                "debugServerPath": "${config:OpenOCDFolder}\\openocd.exe",
                 "x_debugServerPath": "${config:pyOCDFolder}\\pyocd.exe",
                 "setupCommands": [
                     { "text": "-environment-cd ${workspaceRoot}/${config:project.bin}/last" },

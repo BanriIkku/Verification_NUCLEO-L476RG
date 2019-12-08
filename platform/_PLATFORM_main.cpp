@@ -1,5 +1,8 @@
 
 #include "_PLATFORM_main.h"
+#include "_PLATFORM_Logger.h"
+#include "mbed_trace.h"
+
 #define TRACE_GROUP   "plat"
 
 
@@ -12,7 +15,6 @@
 /* ///////////////////////////////////////////////////// */
 MBED_WEAK int _USR_Repetition(void)
 {
-    tr_info("%s_%s_%s : %s",__FILE__,__FUNCTION__, __LINE__, "Repetition" );
     return 0;
 }
 
@@ -25,7 +27,7 @@ MBED_WEAK int _USR_Repetition(void)
 /* ///////////////////////////////////////////////////// */
 MBED_WEAK int _USR_Initialize(void)
 {
-    tr_info("%s_%s_%s : %s",__FILE__,__FUNCTION__, __LINE__, "Initialize" );
+    tr_info("%s[%d] %s: %s", __FILE__, __LINE__, __FUNCTION__, "Initialize" );
     return 0;
 }
 
@@ -38,7 +40,7 @@ MBED_WEAK int _USR_Initialize(void)
 /* ///////////////////////////////////////////////////// */
 MBED_WEAK int _USR_Terminate(void)
 {
-    tr_info("%s_%s_%s : %s",__FILE__,__FUNCTION__, __LINE__, "Terminate" );
+    tr_info("%s[%d] %s: %s", __FILE__, __LINE__, __FUNCTION__, "Terminate" );
     return 0;
 }
 
@@ -51,7 +53,7 @@ MBED_WEAK int _USR_Terminate(void)
 /* ///////////////////////////////////////////////////// */
 int _PLATFORM_Repetition(void)
 {
-    tr_info("%s_%s_%s : %s",__FILE__,__FUNCTION__, __LINE__, "Repetition" );
+    // tr_info("%s_%s_%d: %s",__FILE__,__FUNCTION__, __LINE__, "Repetition" );
     return _USR_Repetition();
 }
 
@@ -64,7 +66,7 @@ int _PLATFORM_Repetition(void)
 /* ///////////////////////////////////////////////////// */
 int _PLATFORM_Initialize(void)
 {
-    tr_info("%s_%s_%s : %s",__FILE__,__FUNCTION__, __LINE__, "Initialize" );
+    tr_info("%s[%d] %s: %s", __FILE__, __LINE__, __FUNCTION__, "Initialize" );
     return _USR_Initialize();
 }
 
@@ -78,7 +80,7 @@ int _PLATFORM_Initialize(void)
 /* ///////////////////////////////////////////////////// */
 int _PLATFORM_Terminate(void)
 {
-    tr_info("%s_%s_%s : %s",__FILE__,__FUNCTION__, __LINE__, "Terminate" );
+    tr_info("%s[%d] %s: %s", __FILE__, __LINE__, __FUNCTION__, "Terminate" );
 
     return _USR_Terminate();
 }
@@ -100,6 +102,14 @@ void _func_continued() {
 /* ///////////////////////////////////////////////////// */
 int _PLATFORM_main(void)
 {
+
+    mbed_trace_print_function_set(_Logger_output);
+    mbed_trace_mutex_wait_function_set(_Logger_mutex_wait_function);
+    mbed_trace_mutex_release_function_set(_Logger_mutex_release_function);
+
+
+    mbed_trace_init();
+
     int ret_value=0;
     usr_led=1;
     ret_value += _PLATFORM_Initialize();
@@ -111,7 +121,6 @@ int _PLATFORM_main(void)
     {
         if(1<= lpt.read())
         {
-            usr_led=!usr_led;
             lpt.reset();
         }
         _PLATFORM_Repetition();
@@ -122,6 +131,9 @@ int _PLATFORM_main(void)
     usr_led=1;
     ret_value += _PLATFORM_Terminate();
     usr_led=0;
+
+    mbed_trace_free();
+
     return ret_value;
 }
 
