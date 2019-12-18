@@ -123,7 +123,7 @@ toc:
 
 ルートフォルダ配下のフォルダ、ファイル構成を示す
 
-@import "tables/フォルダ・ファイル構成.csv"
+@import "diagrams/フォルダ・ファイル構成.puml"
 
 ---
 
