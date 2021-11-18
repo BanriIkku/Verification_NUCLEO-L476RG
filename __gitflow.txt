@@ -1,0 +1,13 @@
+
+develop
+    feature/
+    release/
+    bugfix/
+
+master
+    hotfix/
+    support/
+
+
+git fetch --prune
+git branch --merged | grep -v '*' | xargs -I % git branch -d %

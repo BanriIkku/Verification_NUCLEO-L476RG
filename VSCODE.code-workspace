@@ -41,8 +41,25 @@
 			"BUILD": true,
 			"doxyfile": true,
 			"LICENSE": true,
-			"mbed-os": true,
+			"mbed-os": false,
 			"**/*.md": false
+		},
+		"MBED": {
+			"Drive": "f:"
+		},
+		"project": {
+			"name": "Verification_NUCLEO-L476RG",
+			"targetdevice": "NUCLEO",
+			"bin": "BUILD/NUCLEO_L476RG/GCC_ARM",
+			"build": {
+				"profile": {
+					"debug": "debug",
+					"release": "release"
+				},
+				"Lv_Verbose": "0",
+				"compile_option": "",
+				"RUN_AStyle": "n",
+			}
 		}
 	}
 }

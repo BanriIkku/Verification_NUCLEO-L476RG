@@ -2,8 +2,35 @@
     "name": "myplatform",
     "config": {
         "interval_millisecond": {
-            "help": "",
+            "help": "main task interval",
             "value": 100
+        },
+        "Output_UART_Enable": true,
+        "Output_UART_TX": {
+            "help": "STDIO_UART_TX",
+            "value": "PA_2"
+        },
+        "Output_UART_RX": {
+            "help": "STDIO_UART_RX",
+            "value": "PA_3"
+        },
+        "Output_LED_Enable": true,
+        "Output_LED_PIN": {
+            "help": "USER_LED",
+            "value": "PA_5"
+        },
+        "Suspension_Enable": true,
+        "Suspension_BUTTON": {
+            "help": "USER_BUTTON",
+            "value": "PC_13"
+        },
+        "SystemReport_Enable": true,
+        "SystemReport_Output_thread_text": {
+            "value": "10"
+        },
+        "SystemReport_Interval_millisecond": {
+            "help": "",
+            "value": 10000
         }
     }
 }

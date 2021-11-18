@@ -20,6 +20,11 @@
     },
     "tasks": [
         {
+            "label": "output config",
+            "type": "shell",
+            "command": "mbed compile --config > doc/config_list.txt"
+        },
+        {
             "label": "[debug] build all",
             "type": "shell",
             "command": "",
